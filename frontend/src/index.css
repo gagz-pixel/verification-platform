@@ -1,0 +1,117 @@
+/* frontend/src/index.css — VerifyAI dark theme override */
+/* Replace the existing index.css with this file */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #04020f;
+  color: rgba(255, 255, 255, 0.87);
+  min-height: 100vh;
+  min-width: 320px;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: #818cf8;
+  text-decoration: none;
+}
+a:hover { color: #a5b4fc; }
+
+h1 { font-size: 2.4em; line-height: 1.1; }
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: 'Outfit', sans-serif;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s;
+}
+button:hover { border-color: rgba(99,102,241,0.5); }
+button:focus, button:focus-visible { outline: 3px solid rgba(99,102,241,0.4); }
+
+input, textarea {
+  font-family: 'Outfit', sans-serif;
+  color: rgba(255,255,255,0.9);
+}
+input::placeholder { color: rgba(255,255,255,0.25); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #04020f; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4338ca, #6366f1);
+  border-radius: 3px;
+}
+
+/* ── VAI CSS vars ── */
+:root {
+  --vai-indigo:    #6366f1;
+  --vai-cyan:      #06b6d4;
+  --vai-green:     #22c55e;
+  --vai-red:       #ef4444;
+}
+
+/* ── Utility ── */
+.vai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.vai-badge-indigo {
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.25);
+  color: #a5b4fc;
+}
+.vai-badge-green {
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.25);
+  color: #86efac;
+}
+.vai-badge-cyan {
+  background: rgba(6,182,212,0.10);
+  border: 1px solid rgba(6,182,212,0.25);
+  color: #67e8f9;
+}
+
+.vai-spinner {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid rgba(99,102,241,0.18);
+  border-top-color: #6366f1;
+  animation: vai-spin 0.7s linear infinite;
+}
+
+@keyframes vai-spin { to { transform: rotate(360deg); } }
+
+.vai-waveform-wrap canvas {
+  background: rgba(6,182,212,0.04) !important;
+  border: 1px solid rgba(6,182,212,0.14) !important;
+}
